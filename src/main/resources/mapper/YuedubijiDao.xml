@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YuedubijiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YuedubijiEntity" id="yuedubijiMap">
+        <result property="bijimingcheng" column="bijimingcheng"/>
+        <result property="tupianxinxi" column="tupianxinxi"/>
+        <result property="bijineirong" column="bijineirong"/>
+        <result property="bijileixing" column="bijileixing"/>
+        <result property="bijiriqi" column="bijiriqi"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YuedubijiVO" >
+		SELECT * FROM yuedubiji  yuedubiji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YuedubijiVO" >
+		SELECT  yuedubiji.* FROM yuedubiji  yuedubiji 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YuedubijiView" >
+
+		SELECT  yuedubiji.* FROM yuedubiji  yuedubiji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YuedubijiView" >
+		SELECT * FROM yuedubiji  yuedubiji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
